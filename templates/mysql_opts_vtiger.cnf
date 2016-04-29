@@ -1,0 +1,2 @@
+[client]
+password={{ booked_db_password }}

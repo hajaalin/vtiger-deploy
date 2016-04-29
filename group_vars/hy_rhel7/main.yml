@@ -1,0 +1,6 @@
+---
+  apache_create_vhosts: false
+  apache_vhosts_filename: "ssl.conf"
+
+  graylog_server: lmu-graylog-1.biocenter.helsinki.fi
+  graylog_port: 12223

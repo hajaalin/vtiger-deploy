@@ -1,0 +1,18 @@
+---
+  vtiger_db_name: vtiger
+  vtiger_db_user: vtiger_user
+
+  # Install NXLog by default
+  install_nxlog: false
+
+  # Enable SELinux by default
+  selinux_enabled: true
+
+  # Install MySQL by default
+  install_mysql: true
+
+  # Install ssl-setup role by default
+  install_ssl_setup_role: true
+
+  # Default Apache server name
+  apache_server_name: "{{ inventory_hostname }}"

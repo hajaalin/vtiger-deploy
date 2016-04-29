@@ -1,0 +1,39 @@
+---
+  # secrets from vault.yml
+  mysql_root_password: "{{ vault_mysql_root_password }}"
+  vtiger_db_password: "{{ vault_vtiger_db_password }}"
+
+  #
+  # Apache2
+  #
+  apache_create_vhosts: false
+  apache_vhosts_filename: "ssl.conf"
+  apache_remove_default_vhost: false
+
+  # virtual host to redirect HTTP to HTTPS
+  apache_vhosts:
+    - servername: "{{ inventory_hostname }}"
+      documentroot: "/var/www/html"
+      extra_parameters: |
+        Redirect permanent / https://{{ inventory_hostname }}
+
+  apache_vhosts_ssl:
+    - {
+      servername: "{{ inventory_hostname }}",
+      documentroot: "/var/www/html",
+      certificate_file: "{{ ssl_certificate_file }}",
+      certificate_key_file: "{{ ssl_certificate_key_file }}",
+      certificate_chain_file: "{{ ssl_certificate_chain_file }}"
+    }
+
+  graylog_server: dx5-biotek4.biocenter.helsinki.fi
+  graylog_port: 12229
+
+  # vtiger_source: "local_directory"
+  # vtiger_source_local_dir: "/home/hajaalin/GitHub/vtiger/"
+  # vtiger_source_git_repo: "https://github.com/UH-LMU/vtiger.git"
+  # vtiger_source_git_version: "upgrade"
+
+  selinux_enabled: false
+  use_shibboleth: false
+  install_nxlog: false

@@ -1,0 +1,14 @@
+[booked_hosts]
+lmu-reservations-1.biocenter.helsinki.fi
+
+[test:children]
+booked_hosts
+
+[hy_rhel7:children]
+booked_hosts
+
+[shibboleth:children]
+booked_hosts
+
+[elomake:children]
+booked_hosts

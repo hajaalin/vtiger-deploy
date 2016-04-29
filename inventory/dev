@@ -1,0 +1,8 @@
+[vtiger_hosts]
+192.168.38.11
+
+[dev:children]
+vtiger_hosts
+
+[elomake:children]
+vtiger_hosts
